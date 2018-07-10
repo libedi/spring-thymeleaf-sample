@@ -12,6 +12,10 @@
 	<p th:unless="${falseCondition}">False Condition(th:unless) : Display</p>
 	
 	<!-- switch-case -->
-	
+	<div th:switch="${switchCase}">
+		<p th:case="'case1'">Case1 : Display</p>
+		<p th:case="'case2'">Case2 : Not Display</p>
+		<p th:case="*">Default : Not Display</p>
+	</div>
 </body>
 </html>
