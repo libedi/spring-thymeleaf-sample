@@ -8,8 +8,9 @@
 	<p>
 		Locale : <span th:text="${#locale.country}"></span><br>
 		RequestURI : <span th:text="${#request.contextPath} + ${#request.requestURI}"></span><br>
-		<span th:text="'Message : ' + ${msg} + ' Reference : '"></span>
-		<a th:href="@{https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html}">Thymeleaf Document</a>
+		<span th:text="'Message : ' + ${msg} + ' Reference : '"></span><br>
+		<a th:href="@{https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html}">Thymeleaf Document</a><br>
+		MessageSource : <span th:text="#{test.msg}"></span>
 	</p>
 	<a th:href="@{http://localhost:8080/loop}">Loop Page : Absolute URLs</a><br>
 	<a th:href="@{/condition}">Condition Page : Relative URLs</a>
