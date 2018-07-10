@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Getting Started : Spring + Thymeleaf</title>
+</head>
+<body>
+	<table>
+		<!--
+			status
+			: index
+			: count
+			: size
+			: current
+			: even/odd
+			: first
+			: last 
+		 -->
+		<tr th:each="item,status: ${list}">
+			<td th:text="'Index' + ${status.index} + ', Count' + ${status.count} + ' Item : ' + ${item}"/>
+		</tr>
+	</table>
+	<p th:text="'List Size : ' + ${#lists.size(list)}">
+</body>
+</html>

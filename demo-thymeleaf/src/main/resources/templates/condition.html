@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Getting Started : Spring + Thymeleaf</title>
+</head>
+<body>
+	<!-- if/unless = th:if / th:unless -->
+	<p th:if="${trueCondition}">True Condition</p>
+	<p th:if="${falseCondition}">False Condition : Not Display</p>
+	<p th:if="${not falseCondition}">False Condition(not) : Display</p>
+	<p th:unless="${falseCondition}">False Condition(th:unless) : Display</p>
+	
+	<!-- switch-case -->
+	
+</body>
+</html>

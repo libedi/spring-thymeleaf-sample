@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Getting Started : Spring + Thymeleaf</title>
+</head>
+<body>
+	<p>
+		Locale : <span th:text="${#locale.country}"></span><br>
+		RequestURI : <span th:text="${#request.contextPath} + ${#request.requestURI}"></span><br>
+		<span th:text="'Message : ' + ${msg} + ' Reference : '"></span>
+		<a th:href="@{https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html}">Thymeleaf Document</a>
+	</p>
+	<a th:href="@{http://localhost:8080/loop}">Loop Page : Absolute URLs</a><br>
+	<a th:href="@{/condition}">Condition Page : Relative URLs</a>
+</body>
+</html>
