@@ -7,8 +7,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import lombok.Builder;
+import lombok.Data;
+
 @Controller
 public class ThymeleafController {
+	
+	@Data
+	@Builder
+	static class User {
+		private String username;
+		private String address;
+	}
 	
 	@GetMapping("/hello")
 	public void hello(Model model) {
@@ -26,5 +36,10 @@ public class ThymeleafController {
 		model.addAttribute("trueCondition", true);
 		model.addAttribute("falseCondition", false);
 		model.addAttribute("switchCase", "case1");
+	}
+	
+	@GetMapping("/text")
+	public void text1(Model model) {
+		model.addAttribute("user", User.builder().username("Sang jun, Park").address("Suwon city").build());
 	}
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Getting Started : Spring + Thymeleaf</title>
+</head>
+<body>
+	<ul>
+		<li><h3>Text</h3>
+		<li>MessageSource : <span data-th-text="#{test.msg}"></span></li>
+		<li>Unescape Text : <span data-th-utext="#{test.unescape}"></span></li>
+		<li>Parameter Text : <span data-th-text="#{test.param('This is Parameter.')}"></span></li>
+	</ul>
+	<ul>
+		<li><h3>Asterik syntax</h3></li>
+		<li data-th-object="${user}">
+			<p>Name : <span data-th-text="*{username}"></span>
+			<p>Address : <span data-th-text="*{address}"></span>
+		</li>
+		<!-- exactly equivalent to -->
+		<li>
+			<p>Name : <span data-th-text="${user.username}"></span>
+			<p>Address : <span data-th-text="${user.address}"></span>
+		</li>
+	</ul>
+	<ul>
+		<li><h3>Basic Objects</h3>
+		<li>Locale : <span data-th-text="${#locale.country}"></span></li>
+		<li>RequestURI : <span data-th-text="${#request.contextPath} + ${#request.requestURI}"></span></li>
+		<li>Reference : <a data-th-href="@{https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#expression-basic-objects}">Basic Objects</a>
+	</ul>
+	<ul>
+		<li><h3>Utility Objects</h3></li>
+		<li>
+	</ul>
+</body>
+</html>

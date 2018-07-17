@@ -10,13 +10,11 @@
 		* General Thymeleaf Template mode : "th:*" notation. (<html xmlns:th="http://www.thymeleaf.org">) 
 	 -->
 	<p>
-		Locale : <span data-th-text="${#locale.country}"></span><br>
-		RequestURI : <span data-th-text="${#request.contextPath} + ${#request.requestURI}"></span><br>
 		<span data-th-text="'Message : ' + ${msg} + ' Reference : '"></span><br>
 		<a data-th-href="@{https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html}">Thymeleaf Document</a><br>
-		MessageSource : <span data-th-text="#{test.msg}"></span>
 	</p>
 	<a data-th-href="@{http://localhost:8080/loop}">Loop Page : Absolute URLs</a><br>
-	<a data-th-href="@{/condition}">Condition Page : Relative URLs</a>
+	<a data-th-href="@{/condition}">Condition Page : Relative URLs</a><br>
+	<a data-th-href="@{/text}">Text Page</a>
 </body>
 </html>
