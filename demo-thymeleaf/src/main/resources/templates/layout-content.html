@@ -5,7 +5,8 @@
 <title>Content Page</title>
 </head>
 <body>
-	<section data-layout-fragment="content">
+	<!-- default layout 의 section 요소와 합쳐진다. 우선순위는 content 페이지가 높다. -->
+	<section id="order1" class="section" data-layout-fragment="content">
 		<p data-th-text="'Hello Thymeleaf Layout Example. ' + ${contentMsg}"></p>
 	</section>
 </body>
