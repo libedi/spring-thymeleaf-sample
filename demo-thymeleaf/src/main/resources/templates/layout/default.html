@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title data-layout-title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Thymeleaf Layout Example</title>
+</head>
+<body>
+	<!-- Header Area -->
+	<header data-th-replace="layout/header :: header">
+		<p>This is default Header area.</p>
+	</header>
+	
+	<!-- Content Area -->
+	<section id="content" data-layout-fragment="content">
+		<p>This is default Content area.</p>
+	</section>
+	
+	<!-- Footer Area -->
+	<footer data-th-replace="layout/footer :: footer">
+		<p>This is default Footer area.</p>
+	</footer>
+</body>
+</html>

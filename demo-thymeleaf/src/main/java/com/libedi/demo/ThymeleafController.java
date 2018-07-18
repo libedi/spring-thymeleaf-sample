@@ -39,7 +39,15 @@ public class ThymeleafController {
 	}
 	
 	@GetMapping("/text")
-	public void text1(Model model) {
+	public void text(Model model) {
 		model.addAttribute("user", User.builder().username("Sang jun, Park").address("Suwon city").build());
+	}
+	
+	@GetMapping("/layout-content")
+	public void layoutContent(Model model) {
+		model.addAttribute("title", "This is a title message.");
+		model.addAttribute("headerMsg", "This is a header message.");
+		model.addAttribute("contentMsg", "This is a content message.");
+		model.addAttribute("footerMsg", "This is a footer message.");
 	}
 }
