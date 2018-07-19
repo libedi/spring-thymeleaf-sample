@@ -14,7 +14,9 @@
 - `<p th:text="#{message.source}">Load Message Source</p>`
 - `<p th:text="#{message.source('param')}">Load Message Source with Parameter</p>`
 ### 2.2. Loop - 참고소스 : [loop.html](https://github.com/libedi/spring-thymeleaf-sample/blob/master/demo-thymeleaf/src/main/resources/templates/loop.html)
-- `<tr th:each="item,status: ${list}"> <td th:text="'index: ' + ${status.index} + ', name: ' + ${item.name}"></td> </tr>`
+- `<tr th:each="item,status: ${list}">`  
+`<td th:text="'index: ' + ${status.index} + ', name: ' + ${item.name}"></td>`  
+`</tr>`
 - status
   - index : zero-based current index
   - count : one-based current index
@@ -45,3 +47,10 @@
   - layout을 위한 페이지
   - 공통으로 처리할 페이지 (ex: header/footer/side navigation/etc..)
   - 컨텐츠 페이지
+### 2.5. Date - 참고소스 : [date.html](https://github.com/libedi/spring-thymeleaf-sample/blob/master/demo-thymeleaf/src/main/resources/templates/date.html)
+- Java 8에서 추가된 java.time.* 패키지 지원
+- Instant를  formatting 하려면 ZoneId가 필요한데, Thymeleaf에서 기본적으로 해당 기능을 제공하지 않는다. 사용하려면 확장필요.
+- `<p data-th-text="${#dates.format(standardDate, 'yyyy-MM-dd HH:mm:ss')}"></p>`
+- `<p data-th-text="${#temporals.format(localDateTime, 'yyyy-MM-dd HH:mm:ss')}"></p>`
+- `<p data-th-text="${#temporals.format(localDate, 'yyyy-MM-dd')}"></p>`
+- `<p data-th-text="${#temporals.formatISO(timestamp)}"></p>`
