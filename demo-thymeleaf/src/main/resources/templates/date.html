@@ -6,9 +6,10 @@
 </head>
 <body>
 	<h1>Date Format Example</h1>
-	<p data-th-text="${#dates.format(standardDate, 'yyyyMMdd')}"></p>
-	<p data-th-text="${#temporals.format(localDateTime, 'yyyyMMdd')}"></p>
-	<p data-th-text="${#temporals.format(localDate, 'yyyyMMdd')}"></p>
-	<p data-th-text="${#temporals.format(timestamp, 'yyyyMMdd')}"></p>
+	<p data-th-text="${#dates.format(standardDate, 'yyyy-MM-dd HH:mm:ss')}"></p>
+	<p data-th-text="${#temporals.format(localDateTime, 'yyyy-MM-dd HH:mm:ss')}"></p>
+	<p data-th-text="${#temporals.format(localDate, 'yyyy-MM-dd')}"></p>
+	<p data-th-text="${#temporals.formatISO(timestamp)}"></p>
+	<!-- Instant를  formatting 하려면 ZoneId가 필요한데, Thymeleaf에서 기본적으로 해당 기능을 제공하지 않는다. -->
 </body>
 </html>
