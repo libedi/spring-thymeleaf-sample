@@ -39,5 +39,9 @@
   - `<dependency>`  
 		    `<groupId>nz.net.ultraq.thymeleaf</groupId>`  
 		    `<artifactId>thymeleaf-layout-dialect</artifactId>`  
-        `<version>2.3.0</version>`
+        `<version>2.3.0</version>`  
 		`</dependency>`
+- 기본 구성
+  - layout을 위한 페이지
+  - 공통으로 처리할 페이지 (ex: header/footer/side navigation/etc..)
+  - 컨텐츠 
