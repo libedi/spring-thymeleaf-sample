@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Getting Started : Spring + Thymeleaf</title>
+</head>
+<body>
+	<h1>Date Format Example</h1>
+	<p data-th-text="${#dates.format(standardDate, 'yyyyMMdd')}"></p>
+	<p data-th-text="${#temporals.format(localDateTime, 'yyyyMMdd')}"></p>
+	<p data-th-text="${#temporals.format(localDate, 'yyyyMMdd')}"></p>
+	<p data-th-text="${#temporals.format(timestamp, 'yyyyMMdd')}"></p>
+</body>
+</html>

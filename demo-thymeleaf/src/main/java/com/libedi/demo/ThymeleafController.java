@@ -1,6 +1,10 @@
 package com.libedi.demo;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -18,6 +22,11 @@ public class ThymeleafController {
 	static class User {
 		private String username;
 		private String address;
+	}
+	
+	@GetMapping()
+	public String index(Model model) {
+		return "redirect:hello";
 	}
 	
 	@GetMapping("/hello")
@@ -49,5 +58,13 @@ public class ThymeleafController {
 		model.addAttribute("headerMsg", "This is a header message.");
 		model.addAttribute("contentMsg", "This is a content message.");
 		model.addAttribute("footerMsg", "This is a footer message.");
+	}
+	
+	@GetMapping("/date")
+	public void date(Model model) {
+		model.addAttribute("standardDate", new Date());
+		model.addAttribute("localDateTime", LocalDateTime.now());
+		model.addAttribute("localDate", LocalDate.now());
+		model.addAttribute("timestamp", Instant.now());
 	}
 }
