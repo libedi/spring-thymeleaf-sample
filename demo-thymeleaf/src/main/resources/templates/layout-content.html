@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html data-layout-decorator="layout/default">
+<html data-layout-decorator="layout/default">  <!-- layout/default.html 을 layout 페이지로 참조 -->
 <head>
 <meta charset="UTF-8">
 <title>Content Page</title>
 </head>
 <body>
+	<!-- layout 페이지의 layout:fragment 요소를 접근해 해당 요소와 composite view를 구성한다. -->
 	<!-- default layout 의 section 요소와 합쳐진다. 우선순위는 content 페이지가 높다. -->
 	<section id="order1" class="section" data-layout-fragment="content">
 		<p data-th-text="'Hello Thymeleaf Layout Example. ' + ${contentMsg}"></p>
