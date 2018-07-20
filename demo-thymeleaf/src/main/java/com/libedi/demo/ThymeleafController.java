@@ -20,8 +20,8 @@ public class ThymeleafController {
 	@Data
 	@Builder
 	static class User {
-		private String username;
-		private String address;
+		private final String username;
+		private final String address;
 	}
 	
 	@GetMapping()
