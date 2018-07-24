@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <!--
@@ -7,21 +7,40 @@
 	$CONTENT_TITLE은 content 페이지의 title
 -->
 <title data-layout-title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Thymeleaf Layout Example</title>
+<!-- Common CSS -->
+<style type="text/css">
+p {
+	font-style: italic;
+}
+</style>
+<!-- Content Page CSS -->
+<th:block data-layout-fragment="content-css"></th:block>
 </head>
 <body>
 	<!-- Header Area -->
-	<header data-th-replace="layout/header :: header">  <!-- layout/header.html의 header fragment에 접근 -->
-		<p>This is default Header area.</p>
-	</header>
+	<th:block data-th-replace="layout/header :: header">	<!-- layout/header.html의 header fragment에 접근 -->
+		<header>
+			<p>This is default Header area.</p>
+		</header>
+	</th:block>
 	
 	<!-- Content Area -->
-	<section id="content" data-layout-fragment="content">
-		<p>This is default Content area.</p>
-	</section>
+	<th:block data-layout-fragment="content">
+		<section>
+			<p>This is default Content area.</p>
+		</section>
+	</th:block>
 	
 	<!-- Footer Area -->
-	<footer data-th-replace="layout/footer :: footer">  <!-- layout/footer.html의 footer fragment에 접근 -->
-		<p>This is default Footer area.</p>
-	</footer>
+	<th:block data-th-replace="layout/footer :: footer">	<!-- layout/footer.html의 footer fragment에 접근 -->
+		<footer data-th-replace="layout/footer :: footer">
+			<p>This is default Footer area.</p>
+		</footer>
+	</th:block>
+	
+	<!-- Common Script -->
+	<script data-th-src="@{/webjars/jquery/3.3.1-1/jquery.min.js}" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+	<!-- Content Page Script -->
+	<th:block data-layout-fragment="content-js"></th:block>
 </body>
 </html>

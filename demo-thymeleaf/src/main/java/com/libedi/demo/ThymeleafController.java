@@ -24,7 +24,7 @@ public class ThymeleafController {
 		private final String address;
 	}
 	
-	@GetMapping
+	@GetMapping("/")
 	public String index(Model model) {
 		return "redirect:hello";
 	}
