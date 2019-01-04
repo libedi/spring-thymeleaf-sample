@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 public class ThymeleafController {
 	
@@ -66,5 +68,19 @@ public class ThymeleafController {
 		model.addAttribute("localDateTime", LocalDateTime.now());
 		model.addAttribute("localDate", LocalDate.now());
 		model.addAttribute("timestamp", Instant.now());
+	}
+	
+	@GetMapping("/ajax")
+	public void ajax(Model model) {}
+	
+	@GetMapping("/ajax-result")
+	public String ajaxResult(Model model) {
+		log.info("ajax-result");
+		model.addAttribute("resultList", Arrays.asList(
+				User.builder().username("user1").address("address1").build(),
+				User.builder().username("user2").address("address2").build()
+				));
+		// ajaxResult.html 페이지의  list fragment를 찾는다.
+		return "ajaxResult :: list";
 	}
 }
