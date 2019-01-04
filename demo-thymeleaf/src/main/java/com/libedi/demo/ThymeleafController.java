@@ -10,6 +10,9 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.Builder;
 import lombok.Data;
@@ -82,5 +85,11 @@ public class ThymeleafController {
 				));
 		// ajaxResult.html 페이지의  list fragment를 찾는다.
 		return "ajaxResult :: list";
+	}
+	
+	@PostMapping("/test-enum")
+	@ResponseBody
+	public void enumTest(@RequestBody final TestDto testDto) {
+		log.info(testDto.toString());
 	}
 }
