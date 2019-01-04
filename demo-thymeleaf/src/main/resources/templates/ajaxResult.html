@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Getting Started : Spring + Thymeleaf</title>
+</head>
+<body>
+	<div data-th-fragment="list" data-th-unless="${#lists.isEmpty(resultList)}">
+		<tr data-th-each="item,status: ${resultList}">
+			<td data-th-text="${item.username}">번호</td>
+			<td data-th-text="${item.address}">이름</td>
+		</tr>
+	</div>
+</body>
+
+</html>

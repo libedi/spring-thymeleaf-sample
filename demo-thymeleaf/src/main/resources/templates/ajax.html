@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorator="layout/default">
+<head>
+<meta charset="UTF-8">
+<title>Getting Started : Spring + Thymeleaf</title>
+</head>
+<body>
+	<section class="section" data-layout-fragment="content">
+		<table>
+			<thead>
+			    <tr>
+			        <th>이름</th>
+			        <th>주소</th>
+			    </tr>
+			</thead>
+			<tbody id="result">
+			</tbody>
+		</table>
+		<button id="btnGetList">조회</button>
+	</section>
+	<th:block data-layout-fragment="content-js">
+	<script>
+	$("#btnGetList").click(function(){
+		console.log("get");
+		$("#result").load("/ajax-result");
+	});
+	</script>
+	</th:block>
+</body>
+</html>
